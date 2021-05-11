@@ -2,7 +2,7 @@
   "name": "temp",
   "version": "0.1.0",
   "bin": {
-    "temp": "bin/temp.js"
+    "temp": "bin/DappCloudFormationjs"
   },
   "scripts": {
     "build": "tsc",
