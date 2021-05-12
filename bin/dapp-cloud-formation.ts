@@ -8,7 +8,7 @@ const app = new cdk.App();
 new DappCloudFormationStack(app, 'DappCloudFormationStack');
 new PiplineStack(app,"piplineStack",{
     env:{
-        account: 'ashley'
+        account: '727818404418'
     }
 });
 app.synth()
