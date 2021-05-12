@@ -9,13 +9,13 @@ export class PiplineStack extends Stack {
         super(scope, id, props)
         let sourceArtifact = new cp.Artifact();
         let cloudAssemblyArtifact = new cp.Artifact();
-        const pipeline = new CdkPipeline(this, 'pipline', {
+        const pipeline = new CdkPipeline(this, 'Pipeline', {
             pipelineName: "dapp-cloud-formation-pipline",
             cloudAssemblyArtifact,
             sourceAction: new cpa.GitHubSourceAction({
                 actionName: 'GitHub',
                 output: sourceArtifact,
-                oauthToken: SecretValue.secretsManager('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'),
+                oauthToken: SecretValue.secretsManager('arn:aws:secretsmanager:us-east-2:727818404418:secret:github-token-2-KXuf8t'),
                 trigger: cpa.GitHubTrigger.POLL,
                 owner: "hendrash",
                 repo: "master"

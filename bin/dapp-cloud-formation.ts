@@ -6,8 +6,8 @@ import { PiplineStack } from '../lib/pipline-stack';
 
 const app = new cdk.App();
 new DappCloudFormationStack(app, 'DappCloudFormationStack');
-new PiplineStack(app,"piplineStack",{
-    env:{
+new PiplineStack(app, "PipelineStack", {
+    env: {
         account: '727818404418'
     }
 });
