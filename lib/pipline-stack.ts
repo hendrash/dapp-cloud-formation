@@ -16,7 +16,7 @@ export class PiplineStack extends Stack {
             sourceAction: new cpa.GitHubSourceAction({
                 actionName: 'GitHub',
                 output: sourceArtifact,
-                oauthToken: SecretValue.plainText("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"),
+                oauthToken: SecretValue.plainText(process.env.GIT_TOKEN+""),
                 trigger: cpa.GitHubTrigger.POLL,
                 owner: "hendrash",
                 repo: "master"
@@ -30,6 +30,7 @@ export class PiplineStack extends Stack {
     }catch(error){
         console.log(error)
         console.log(SecretValue.secretsManager('arn:aws:secretsmanager:us-east-2:727818404418:secret:github-token-2-KXuf8t'))
+        console.log(SecretValue.plainText(process.env.GIT_TOKEN+""))
     }
 
 
